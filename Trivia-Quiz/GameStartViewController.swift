@@ -12,6 +12,7 @@ class GameStartViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     let fetchdata = fetchData()
     var x: [Question]?
     var results: [[String:Any]]?
+    var url = "https://opentdb.com/api.php?amount=5"
     
     var categoryChosen: String = "Any"
     var questionTypeChosen: String = "Any"
@@ -33,9 +34,8 @@ class GameStartViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.questionTypePicker.delegate = self
         self.categoryPicker.dataSource = self
         self.questionTypePicker.dataSource = self
-        fetchdata.fetchAnyAny { (q1) in if let q2 = q1 {
+        fetchdata.fetchAnyAny(url) { (q1) in if let q2 = q1 {
                 self.x = q2
-                print(self.x)
             }
         }
         fetchdata.fetchResult{ (test) in
@@ -91,9 +91,44 @@ class GameStartViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         else {
             questionTypeChosen = questionTypePickerData[row]
         }
-    }
-
-    func printdata() {
-        print(self.x!)
+        
+        if categoryChosen == "Any" && questionTypeChosen == "Any"{
+            url = "https://opentdb.com/api.php?amount=5"
+        } else if categoryChosen == "Sports" && questionTypeChosen == "Any" {
+            url = "https://opentdb.com/api.php?amount=5&category=21"
+        } else if categoryChosen == "Animals" && questionTypeChosen == "Any" {
+            url = "https://opentdb.com/api.php?amount=5&category=27"
+        } else if categoryChosen == "Vehicles" && questionTypeChosen == "Any" {
+            url = "https://opentdb.com/api.php?amount=5&category=28"
+        } else if categoryChosen == "History" && questionTypeChosen == "Any" {
+            url = "https://opentdb.com/api.php?amount=5&category=23"
+        } else if categoryChosen == "General Knowledge" && questionTypeChosen == "Any" {
+            url = "https://opentdb.com/api.php?amount=5&category=9"
+        } else if categoryChosen == "Sports" && questionTypeChosen == "Multiple Choice" {
+            url = "https://opentdb.com/api.php?amount=5&category=21&type=multiple"
+        } else if categoryChosen == "Animals" && questionTypeChosen == "Multiple Choice" {
+            url = "https://opentdb.com/api.php?amount=5&category=27&type=multiple"
+        } else if categoryChosen == "Vehicles" && questionTypeChosen == "Multiple Choice" {
+            url = "https://opentdb.com/api.php?amount=5&category=28&type=multiple"
+        } else if categoryChosen == "History" && questionTypeChosen == "Multiple Choice" {
+            url = "https://opentdb.com/api.php?amount=5&category=23&type=multiple"
+        } else if categoryChosen == "General Knowledge" && questionTypeChosen == "Multiple Choice" {
+            url = "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
+        } else if categoryChosen == "Sports" && questionTypeChosen == "True or False" {
+            url = "https://opentdb.com/api.php?amount=5&category=21&type=boolean"
+        } else if categoryChosen == "Animals" && questionTypeChosen == "True or False" {
+            url = "https://opentdb.com/api.php?amount=5&category=27&type=boolean"
+        } else if categoryChosen == "Vehicles" && questionTypeChosen == "True or False" {
+            url = "https://opentdb.com/api.php?amount=5&category=28&type=boolean"
+        } else if categoryChosen == "History" && questionTypeChosen == "True or False" {
+            url = "https://opentdb.com/api.php?amount=5&category=23&type=boolean"
+        } else if categoryChosen == "General Knowledge" && questionTypeChosen == "True or False" {
+            url = "https://opentdb.com/api.php?amount=5&category=9&type=boolean"
+        
+        }
+        fetchdata.fetchAnyAny(url) { (q1) in if let q2 = q1 {
+            self.x = q2
+            }
+        }
     }
 }

@@ -17,9 +17,11 @@ class InGameViewController: UIViewController {
     var score = 0
     var answersTrue = 0
     var answerWrong = 0
-
+    
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet weak var score1: UILabel!
     
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
@@ -29,12 +31,13 @@ class InGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game()
-        print(questions!)
-        print(questions!.count)
         // Do any additional setup after loading the view.
     }
     
     func game() {
+        let totalProgress = Float(i)/Float(questions!.count)
+        progressBar.setProgress(totalProgress, animated: true)
+        score1.text = "Score: \(score)"
         answerList.append(questions![i].correct_answer.removingHTMLEntities)
         for q in questions![i].incorrect_answers {
             answerList.append(q.removingHTMLEntities)
@@ -59,8 +62,6 @@ class InGameViewController: UIViewController {
     }
     
     @IBAction func answer1Action(_ sender: Any) {
-        print(answer1.title(for: .normal)!)
-        print(questions![i].correct_answer)
         if answer1.title(for: .normal) == questions![i].correct_answer {
             score += 10
             answersTrue += 1
@@ -77,9 +78,6 @@ class InGameViewController: UIViewController {
     }
     
     @IBAction func answer2Action(_ sender: Any) {
-        print("2")
-        print(answer2.title(for: .normal)!)
-        print(questions![i].correct_answer)
         if answer2.title(for: .normal) == questions![i].correct_answer {
             score += 10
             answersTrue += 1
@@ -95,9 +93,6 @@ class InGameViewController: UIViewController {
         }
     }
     @IBAction func answer3Action(_ sender: Any) {
-        print("3")
-        print(answer3.title(for: .normal)!)
-        print(questions![i].correct_answer)
         if answer3.title(for: .normal) == questions![i].correct_answer {
             score += 10
             answersTrue += 1
@@ -113,8 +108,6 @@ class InGameViewController: UIViewController {
         }
     }
     @IBAction func answer4Action(_ sender: Any) {
-        print(answer4.title(for: .normal)!)
-        print(questions![i].correct_answer)
         if answer4.title(for: .normal) == questions![i].correct_answer {
             score += 10
             answersTrue += 1

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C963B67CA05AEE7A79F1458 /* Pods_Trivia_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3F9494ED242D1FECDEE226 /* Pods_Trivia_Quiz.framework */; };
 		A9243B9621BD656800E887CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9243B9521BD656800E887CB /* AppDelegate.swift */; };
-		A9243B9821BD656800E887CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9243B9721BD656800E887CB /* ViewController.swift */; };
 		A9243B9B21BD656800E887CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9243B9921BD656800E887CB /* Main.storyboard */; };
 		A9243B9D21BD656C00E887CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9243B9C21BD656C00E887CB /* Assets.xcassets */; };
 		A9243BA021BD656C00E887CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9243B9E21BD656C00E887CB /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		A92B14C621BE8806002D8CC3 /* fetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B14C521BE8806002D8CC3 /* fetchData.swift */; };
 		A93F199D21BF03720011CE2F /* finishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F199C21BF03720011CE2F /* finishedViewController.swift */; };
 		A93F199F21BFC3C10011CE2F /* scoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F199E21BFC3C10011CE2F /* scoreTableViewController.swift */; };
-		A93F19A121BFEFF90011CE2F /* scoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F19A021BFEFF90011CE2F /* scoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +26,6 @@
 		7F5CECFDA71E3C883A0CF725 /* Pods-Trivia-Quiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia-Quiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trivia-Quiz/Pods-Trivia-Quiz.debug.xcconfig"; sourceTree = "<group>"; };
 		A9243B9221BD656800E887CB /* Trivia-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivia-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9243B9521BD656800E887CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A9243B9721BD656800E887CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A9243B9A21BD656800E887CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9243B9C21BD656C00E887CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9243B9F21BD656C00E887CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +36,6 @@
 		A92B14C521BE8806002D8CC3 /* fetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = fetchData.swift; path = Assets.xcassets/fetchData.swift; sourceTree = "<group>"; };
 		A93F199C21BF03720011CE2F /* finishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finishedViewController.swift; sourceTree = "<group>"; };
 		A93F199E21BFC3C10011CE2F /* scoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreTableViewController.swift; sourceTree = "<group>"; };
-		A93F19A021BFEFF90011CE2F /* scoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,15 +81,13 @@
 			isa = PBXGroup;
 			children = (
 				A9243B9521BD656800E887CB /* AppDelegate.swift */,
-				A9243B9721BD656800E887CB /* ViewController.swift */,
 				A9243B9921BD656800E887CB /* Main.storyboard */,
-				A93F199E21BFC3C10011CE2F /* scoreTableViewController.swift */,
-				A93F199C21BF03720011CE2F /* finishedViewController.swift */,
-				A9243BAB21BD7E7800E887CB /* questionData.swift */,
-				A93F19A021BFEFF90011CE2F /* scoreData.swift */,
-				A92B14C521BE8806002D8CC3 /* fetchData.swift */,
-				A9243BA921BD6FAF00E887CB /* InGameViewController.swift */,
 				A9243BA721BD6D6E00E887CB /* GameStartViewController.swift */,
+				A9243BA921BD6FAF00E887CB /* InGameViewController.swift */,
+				A93F199C21BF03720011CE2F /* finishedViewController.swift */,
+				A93F199E21BFC3C10011CE2F /* scoreTableViewController.swift */,
+				A9243BAB21BD7E7800E887CB /* questionData.swift */,
+				A92B14C521BE8806002D8CC3 /* fetchData.swift */,
 				A9243B9C21BD656C00E887CB /* Assets.xcassets */,
 				A9243B9E21BD656C00E887CB /* LaunchScreen.storyboard */,
 				A9243BA121BD656C00E887CB /* Info.plist */,
@@ -231,11 +225,9 @@
 			files = (
 				A9243BA821BD6D6E00E887CB /* GameStartViewController.swift in Sources */,
 				A9243BAA21BD6FAF00E887CB /* InGameViewController.swift in Sources */,
-				A93F19A121BFEFF90011CE2F /* scoreData.swift in Sources */,
 				A92B14C621BE8806002D8CC3 /* fetchData.swift in Sources */,
 				A9243BAC21BD7E7800E887CB /* questionData.swift in Sources */,
 				A93F199D21BF03720011CE2F /* finishedViewController.swift in Sources */,
-				A9243B9821BD656800E887CB /* ViewController.swift in Sources */,
 				A9243B9621BD656800E887CB /* AppDelegate.swift in Sources */,
 				A93F199F21BFC3C10011CE2F /* scoreTableViewController.swift in Sources */,
 			);

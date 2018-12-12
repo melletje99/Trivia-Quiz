@@ -12,13 +12,11 @@ import HTMLString
 
 
 class fetchData {
-    func fetchAnyAny(completion: @escaping ([Question]?) -> Void) {
-        let testURL = URL(string: "https://opentdb.com/api.php?amount=5")!
-        print(testURL)
+    func fetchAnyAny(_ url: String, completion: @escaping ([Question]?) -> Void) {
+        let testURL = URL(string: url)!
         let task = URLSession.shared.dataTask(with: testURL)
         { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            print(data!)
             if let data = data,
                 let questions2 = try? jsonDecoder.decode(Questions.self, from: data) {
                 completion(questions2.results)
@@ -45,7 +43,7 @@ class fetchData {
         task.resume()
     }
     
-    func submitResults(name: String?, score: Int?) {
+    func submitResults(name: String?, score: Int?, completion: @escaping() -> ()) {
         let url = URL(string: "http://127.0.0.1:5000/list")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -53,18 +51,15 @@ class fetchData {
         let postString = "name=\(name!)&score=\(score!)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error!)")
+            guard let data = data, error == nil else {
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response!)")
+                completion()
             }
             
             let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString!)")
         }
         task.resume()
     }
