@@ -31,7 +31,12 @@ class scoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.results!.count
+        if self.results == nil {
+            return 0
+        } else {
+            return self.results!.count
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,9 +46,12 @@ class scoreTableViewController: UITableViewController {
     }
     
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let item = self.results![indexPath.row]
-        cell.textLabel?.text = item["name"] as? String
-        cell.detailTextLabel?.text = item["score"] as? String
+        if self.results != nil {
+            let item = self.results![indexPath.row]
+            cell.textLabel?.text = item["name"] as? String
+            cell.detailTextLabel?.text = item["score"] as? String
+        }
+        
         
     }
     
