@@ -1,20 +1,36 @@
 # Trivia Quiz
-Trivia Quiz let's you answer questions.
+## Initial and Updated Features
+### -Added a home screen where the user can choose a category and question type
+### -Added icons in the tab bar
+### -Added a question view
+### -Added a tab bar so the user also can see the scores
+### -Added a label with teh category
+### -Added a progress view bar
+### -Added a score label
+### -Added a result page
+### -Added the functionality to add your result to the score list
+### -Added the functionality to see the high scores
+### -Added the functionality to start a new game from the result page
+### -Added the functionality to start a new games from the high scores list
+### -Added the constraint that the new game button in the high scores list can only be clicked if it is not via the tab bar
 
-<img src="docs/BeginScherm.png" width="250">
-This is the starting screen of the app
 
-<img src="docs/fq.png" width="250">
-This is how a question screen looks like
+### Home
+<kbd><img src="docs/home.png" width="300"></kbd>
 
-<img src="docs/inGame.png" width="250">
-This is how a question screen looks like after a few questions
+### In Game
+<kbd><img src="docs/inGame.png" width="300"></kbd>
 
-<img src="docs/finished.png" width="250">
-This the screen you get when you are done with the game
+### Result Page before submit
+<kbd><img src="docs/submit.png" width="300"></kbd>
 
-<img src="docs/submitted.png" width="250">
-This is the screen you get when you have submitted you're name to the scores list
+### Result Page
+<kbd><img src="docs/result.png" width="300"></kbd>
 
-<img src="docs/scores.png" width="250">
-This is the scores list
+### High Scores via Results
+<kbd><img src="docs/highscoresresult.png" width="300"></kbd>
+
+### High Scores via Tab Bar
+<kbd><img src="docs/highscorestabbar.png" width="300"></kbd>
+
+

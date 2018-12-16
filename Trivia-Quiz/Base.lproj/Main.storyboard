@@ -186,7 +186,7 @@
         <scene sceneID="TwF-LT-vj2">
             <objects>
                 <navigationController id="HtN-MD-FtL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scores" id="w93-B0-WqB"/>
+                    <tabBarItem key="tabBarItem" title="Scores" image="scores" id="w93-B0-WqB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G0I-gZ-zBb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Buo-MA-McR">
-                                <rect key="frame" x="28" y="86" width="320" height="160"/>
+                                <rect key="frame" x="27.5" y="86" width="320" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="ip9-8u-OiA"/>
                                     <constraint firstAttribute="height" constant="160" id="nL2-zD-TKQ"/>
@@ -231,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGX-fw-kpg">
-                                <rect key="frame" x="28" y="333" width="320" height="160"/>
+                                <rect key="frame" x="27.5" y="333" width="320" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="6Zj-gg-j2b"/>
                                     <constraint firstAttribute="height" constant="160" id="zpQ-ei-sJi"/>
@@ -259,7 +259,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="grB-7y-cDZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" id="OXg-hC-aVI"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="game" id="OXg-hC-aVI"/>
                     <connections>
                         <outlet property="categoryPicker" destination="Buo-MA-McR" id="kXd-lw-6h6"/>
                         <outlet property="questionTypePicker" destination="fGX-fw-kpg" id="vaH-46-5wo"/>
@@ -414,6 +414,10 @@
             <point key="canvasLocation" x="-473" y="153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="game" width="30" height="30"/>
+        <image name="scores" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xQa-iK-0YM"/>
         <segue reference="jBT-3h-QQN"/>
